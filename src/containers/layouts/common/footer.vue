@@ -33,12 +33,12 @@
             </div>
           </div>
           <span class="flex-grow-1"></span>
-          <a
+          <!-- <a
             class="btn btn-primary text-white btn-rounded"
             href="https://themeforest.net/item/gull-vuejs-admin-dashboard-template/24497287?ref=ui-lib"
             target="_blank"
             >Buy Gull Vue</a
-          >
+          > -->
         </div>
       </div>
       <!-- fotter end -->
