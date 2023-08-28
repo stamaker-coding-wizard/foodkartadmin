@@ -18,7 +18,7 @@ export const dashboardOne = {
     },
   ],
   chartOptions: {
-    colors: ["rgba(196, 181, 253, 1)", "#a78bfa"],
+    colors: ["rgb(150, 224, 199)", "#10b981"],
     chart: {
       type: "bar",
       height: 350,
@@ -71,7 +71,7 @@ export const dashboardTwo = {
   series: [44, 55, 13, 43, 22],
   chartOptions: {
     fill: {
-      colors: ["#EDE9FE", "#DDD6FE", "#8B5CF6", "#C4B5FD", "#A78BFA"],
+      colors: ["#10b981", "#49a788", "#084732", "#15d293", "#96e0c7"],
     },
     chart: {
       width: "100%",
