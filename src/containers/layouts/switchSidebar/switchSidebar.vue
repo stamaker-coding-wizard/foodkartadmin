@@ -39,6 +39,12 @@
                                     <li class="item-name">
                                         <a class="" href="#">
                                             <i class="i-Circular-Point text-15 mr-2 text-muted"></i>
+                                            <span class="text-15 text-muted">Dashboard av1</span>
+                                        </a>
+                                    </li>
+                                    <li class="item-name">
+                                        <a class="" href="#">
+                                            <i class="i-Circular-Point text-15 mr-2 text-muted"></i>
                                             <span class="text-15 text-muted">Dashboard v1</span>
                                         </a>
                                     </li>

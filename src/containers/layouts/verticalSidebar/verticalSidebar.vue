@@ -53,10 +53,18 @@
               </a>
             </div>
             <b-collapse id="collapse-1">
+              
               <ul
                 class="Ul_collapse"
                 :class="{ 'vertical-item-name': getVerticalCompact.isItemName }"
               >
+                <li>
+                  <router-link tag="a" class to="/app/dashboards/dashboard.av1">
+                    <i class="i-Circular-Point mr-2"></i>
+                    <span>Dashboard av1</span>
+                  </router-link>
+                </li>
+                
                 <li>
                   <router-link tag="a" class to="/app/dashboards/dashboard.v1">
                     <i class="i-Circular-Point mr-2"></i>

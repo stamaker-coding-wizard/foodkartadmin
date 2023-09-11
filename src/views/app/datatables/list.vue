@@ -1,6 +1,7 @@
 <template>
   <div class="main-content">
-    <breadcumb :page="'List'" :folder="'Datatables'" />
+    <breadcumb :page="'User Manager'" :folder="'Users'" :folder2="'User Manager'" />
+    <!--
     <b-row>
       <b-col md="6" class="mb-30">
         <button
@@ -72,6 +73,7 @@
         </div>
       </div>
     </section>
+    
     <b-row>
       <b-col md="12" class="mt-4">
         <b-pagination
@@ -93,10 +95,12 @@
         </b-pagination>
       </b-col>
     </b-row>
+    -->
   </div>
 </template>
 
 <script>
+{/*
 const items = [
   {
     img: require("@/assets/images/products/iphone-1.jpg"),
@@ -227,7 +231,8 @@ export default {
   mounted() {
     this.paginate(this.perPage, 0);
   }
-};
+
+};*/}
 </script>
 <style>
 ul.gull-pagination li {

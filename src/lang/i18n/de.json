@@ -1,6 +1,7 @@
 {
   "dashboard": "Instrumententafel",
   "dashboardItems": {
+    "versionAOne": "Version Eins",
     "versionOne": "Version Eins",
     "versionTwo": "Version zwei",
     "versionThree": "Version drei",

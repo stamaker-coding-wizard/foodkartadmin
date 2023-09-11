@@ -1,7 +1,8 @@
 <template>
   <div class="main-content">
-    <breadcumb :page="'Vue Good Table'" :folder="'Datatables'" />
+    <breadcumb :page="'Roles & Permissions'" :folder="'Users'" :folder2="'Roles and Permissions'" />
     <!-- <div class="wrapper"> -->
+      <!--
     <vue-good-table
       :columns="columns"
       :line-numbers="true"
@@ -39,6 +40,7 @@
         </span>
       </template>
     </vue-good-table>
+    -->
   </div>
 </template>
 

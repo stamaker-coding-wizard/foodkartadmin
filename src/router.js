@@ -22,6 +22,11 @@ const routes = [
         component: () => import("./views/app/dashboards"), //dashboard
         children: [
           {
+            path: "dashboard.av1",
+            name: "dashboard.av1",
+            component: () => import("./views/app/dashboards/dashboard.av1"),
+          },
+          {
             path: "dashboard.v1",
             name: "dashboard.v1",
             component: () => import("./views/app/dashboards/dashboard.v1"),
@@ -292,7 +297,7 @@ const routes = [
           },
           {
             path: "vue-table",
-            path: "vue-table",
+            name: "vue-table",
             component: () => import("./views/app/apps/vue-tables"),
           },
           {
@@ -548,9 +553,9 @@ const router = new Router({
   mode: "history",
   linkActiveClass: "open",
   routes,
-  scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
-  },
+  //scrollBehavior(to, from, savedPosition) {
+    //return { x: 0, y: 0 };
+  //},
 });
 
 router.beforeEach((to, from, next) => {

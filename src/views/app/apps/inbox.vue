@@ -1,9 +1,13 @@
 <template>
   <div class="main-content">
-    <breadcumb :page="'Inbox'" :folder="'Apps'" />
+    <breadcumb :page="'Bikers'" :folder="'Transport'" :folder2="'Bikers'" />
+    <!--
     <div class="inbox-main-sidebar-container sidebar-container">
       <div class="inbox-main-content sidebar-content" style="">
-        <!-- SECONDARY SIDEBAR CONTAINER -->
+
+
+         SECONDARY SIDEBAR CONTAINER 
+
         <div
           class="inbox-secondary-sidebar-container box-shadow-1 sidebar-container"
         >
@@ -13,7 +17,7 @@
               style="min-height: 500px"
             >
               <div class="inbox-topbar box-shadow-1 perfect-scrollbar pl-3 ps">
-                <!-- <span class="d-sm-none">Test</span> -->
+                 <span class="d-sm-none">Test</span> 
                 <a class="link-icon d-md-none">
                   <i class="icon-regular i-Arrow-Turn-Left"></i>
                 </a>
@@ -48,7 +52,10 @@
                   ></div>
                 </div>
               </div>
-              <!-- EMAIL DETAILS -->
+
+
+               EMAIL DETAILS 
+
               <div class="inbox-details perfect-scrollbar ps">
                 <div class="row no-gutters">
                   <div class="mr-2" style="width: 36px">
@@ -113,7 +120,9 @@
             </div>
           </div>
 
-          <!-- Secondary Inbox sidebar -->
+
+          Secondary Inbox sidebar 
+
           <div
             class="inbox-secondary-sidebar perfect-scrollbar ps sidebar"
             style=""
@@ -221,7 +230,7 @@
         </div>
       </div>
 
-      <!-- MAIN INBOX SIDEBAR -->
+       MAIN INBOX SIDEBAR 
       <div
         data-sidebar="main"
         data-sidebar-position="left"
@@ -275,11 +284,12 @@
           </ul>
         </div>
       </div>
-    </div>
-  </div>
+    </div>-->
+
+</div>
 </template>
 <script>
-import { VueEditor } from "vue2-editor";
+//import { VueEditor } from "vue2-editor";
 
 export default {
   metaInfo: {
@@ -287,7 +297,7 @@ export default {
     title: "Inbox"
   },
   components: {
-    VueEditor
+   // VueEditor
   },
 
   data() {
