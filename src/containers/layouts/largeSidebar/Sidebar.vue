@@ -623,7 +623,7 @@
           :class="{ 'd-block': selectedParentMenu == 'ui-kits' }"
         >
           <li class="nav-item">
-            <router-link tag="a" class to="/app/ui-kits/alerts">
+            <router-link tag="a" class to="/vendors/category/list">
               <i class="nav-icon i-Bell1"></i>
               <!--<span class="item-name">Alerts</span>-->
               <span class="item-name">Product Groups</span>

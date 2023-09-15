@@ -132,6 +132,90 @@ const routes = [
         ],
       },
 
+       //vendors
+       {
+        path: "/vendors/category",
+        component: () => import("./views/vendors/category"),
+        redirect: "/vendors/category/list",
+        children: [
+          {
+            path: "list",
+            name: "list",
+            component: () => import("./views/vendors/category/list"),
+          },
+          // {
+          //   path: "accordion",
+          //   name: "accordion",
+          //   component: () => import("./views/app/ui-kits/accordion"),
+          // },
+          // {
+          //   path: "badges",
+          //   name: "badges",
+          //   component: () => import("./views/app/ui-kits/badges"),
+          // },
+          // {
+          //   path: "buttons",
+          //   name: "buttons",
+          //   component: () => import("./views/app/ui-kits/buttons"),
+          // },
+          // {
+          //   path: "bootstrap-tab",
+          //   name: "bootstrap-tab",
+          //   component: () => import("./views/app/ui-kits/bootstrap-tab"),
+          // },
+          // {
+          //   path: "cards",
+          //   name: "cards",
+          //   component: () => import("./views/app/ui-kits/cards"),
+          // },
+          // {
+          //   path: "list",
+          //   name: "list",
+          //   component: () => import("./views/app/ui-kits/list"),
+          // },
+          // {
+          //   path: "popover",
+          //   name: "popover",
+          //   component: () => import("./views/app/ui-kits/popover"),
+          // },
+          // {
+          //   path: "progressbar",
+          //   name: "progressbar",
+          //   component: () => import("./views/app/ui-kits/progressbar"),
+          // },
+          // {
+          //   path: "collapsible",
+          //   name: "collapsible",
+          //   component: () => import("./views/app/ui-kits/collapsible"),
+          // },
+          // {
+          //   path: "modals",
+          //   name: "modals",
+          //   component: () => import("./views/app/ui-kits/modals"),
+          // },
+          // {
+          //   path: "typography",
+          //   name: "typography",
+          //   component: () => import("./views/app/ui-kits/typography"),
+          // },
+          // {
+          //   path: "carousel",
+          //   name: "carousel",
+          //   component: () => import("./views/app/ui-kits/carousel"),
+          // },
+          // {
+          //   path: "pagination",
+          //   name: "pagination",
+          //   component: () => import("./views/app/ui-kits/pagination"),
+          // },
+          // {
+          //   path: "slider",
+          //   component: () => import("./views/app/ui-kits/sliders")
+          // }
+        ],
+      },
+
+
       //uiExtraKits
       {
         path: "/app/extraKits",
