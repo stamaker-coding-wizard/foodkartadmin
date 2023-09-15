@@ -25,7 +25,7 @@
               <span class="nav-text text-white">{{ $t("dashboard") }}</span>
             </a>
 
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <li
             @mouseenter="toggleSubMenu"
@@ -38,7 +38,7 @@
               <i class="nav-icon i-Library text-white" style=""></i>
               <span class="nav-text text-white">Vendors</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <li
             @mouseenter="toggleSubMenu"
@@ -51,7 +51,7 @@
               <i class="nav-icon i-Suitcase text-white"></i>
               <span class="nav-text text-white">Business</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <li
             @mouseenter="toggleSubMenu"
@@ -64,7 +64,7 @@
               <i class="nav-icon i-Computer-Secure text-white"></i>
               <span class="nav-text text-white">Courier</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <!--
           <li
@@ -144,7 +144,7 @@
               <i class="nav-icon i-Administrator text-white"></i>
               <span class="nav-text text-white">Sessions</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <!--
           <li
