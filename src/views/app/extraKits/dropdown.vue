@@ -1,7 +1,8 @@
 <template>
     <div class="main-content">
         
-        <breadcumb :page="'Dropdown'" :folder="'Extra Kits'" />
+        <breadcumb :page="'Revenue Orders'" :folder="'Revenue'" :folder2="'Orders'" />
+        <!--
         <b-row>
             <b-col md="4" class=" mb-30">
                 <b-card class="h-100" title="Basic Examples" >
@@ -236,6 +237,98 @@
                 </b-card>
             </b-col>
         </b-row>
+        -->
+        <div class="row">
+            <b-col md="12">
+                <!-- start::basic-tab -->
+                <b-card  
+                class="card   mb-30" 
+                header="Basic Tabs" 
+                header-bg-variant="transparent ">
+                    
+                    <b-tabs  
+                    active-nav-item-class="nav nav-tabs"
+                    content-class="mt-3"
+                    >
+                        <b-tab title="All Order" active>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="card text-left">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3">All Orders </h4>
+                                            
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Ordered</th>
+                                                            <th scope="col">Customer</th>
+                                                            <th scope="col">Order</th>
+                                                            <th scope="col">Delivery Date and <br> Time</th>
+                                                            <th scope="col">Order <br> Price</th>
+                                                            <th scope="col">Order <br> Status</th>
+                                                            <th scope="col">Payment <br> Type</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">ASDR34R</th>
+                                                            <td>Smith Doe</td>
+                                                            <td>Antibiotics</td>
+                                                            <td>12-10-2019</td>
+                                                            <td>5000</td>
+                                                            <td><span class="badge badge-warning">Pending</span></td>
+                                                            <td>Card</td>
+                                                            <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ASDR34R</th>
+                                                            <td>Smith Doe</td>
+                                                            <td>Antibiotics</td>
+                                                            <td>23-10-2019</td>
+                                                            <td>5000</td>
+                                                            <td><span class="badge badge-success">Completed</span></td>
+                                                            <td>Card</td>
+                                                            <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ASDR34R</th>
+                                                            <td>Smith Doe</td>
+                                                            <td>Antibiotics</td>
+                                                            <td>12-10-2019</td>
+                                                            <td>5000</td>
+                                                            <td><span class="badge badge-success">Completed</span></td>
+                                                            <td>Card</td>
+                                                            <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </b-tab>
+                        <b-tab title="Pending">
+                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </b-tab>
+                        <b-tab title="Packaged" >
+                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </b-tab>
+                        <b-tab title="Completed">
+                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </b-tab>
+                        <b-tab title="Canceled">
+                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </b-tab>
+                        <b-tab title="Restituted" >
+                            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </b-tab>
+                    </b-tabs>         
+                </b-card> 
+            </b-col>
+        </div>
     </div>
 </template>
 <script>

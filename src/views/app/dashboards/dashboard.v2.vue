@@ -1,6 +1,6 @@
 <template>
   <div class="main-content">
-    <breadcumb :page="'Version 2'" :folder="'Dashboard'" />
+    <breadcumb :page="'Business Analytics'" :folder="'Business'" />
 
     <b-row>
       <b-col lg="6" xl="6" md="12">

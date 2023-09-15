@@ -9,7 +9,7 @@
       :settings="{ suppressScrollX: true, wheelPropagation: false }"
       :class="{ open: getSideBarToggleProperties.isSideNavOpen }"
       ref="myData"
-      class="sidebar-left rtl-ps-none ps scroll"
+      class="sidebar-left rtl-ps-none ps scroll bg-success" 
     >
       <div>
         <ul class="navigation-left">
@@ -21,11 +21,11 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Bar-Chart"></i>
-              <span class="nav-text">{{ $t("dashboard") }}</span>
+              <i class="nav-icon i-Bar-Chart text-white"></i>
+              <span class="nav-text text-white">{{ $t("dashboard") }}</span>
             </a>
 
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <li
             @mouseenter="toggleSubMenu"
@@ -35,10 +35,10 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Library"></i>
-              <span class="nav-text">UI kits</span>
+              <i class="nav-icon i-Library text-white" style=""></i>
+              <span class="nav-text text-white">Vendors</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <li
             @mouseenter="toggleSubMenu"
@@ -48,10 +48,10 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Suitcase"></i>
-              <span class="nav-text">Extra kits</span>
+              <i class="nav-icon i-Suitcase text-white"></i>
+              <span class="nav-text text-white">Business</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
           <li
             @mouseenter="toggleSubMenu"
@@ -61,11 +61,12 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Computer-Secure"></i>
-              <span class="nav-text">Apps</span>
+              <i class="nav-icon i-Computer-Secure text-white"></i>
+              <span class="nav-text text-white">Courier</span>
             </a>
-            <div class="triangle"></div>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
+          <!--
           <li
             @mouseenter="toggleSubMenu"
             class="nav-item"
@@ -74,8 +75,8 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Pie-Chart-2"></i>
-              <span class="nav-text">Charts</span>
+              <i class="nav-icon i-Pie-Chart-2 text-white"></i>
+              <span class="nav-text text-white">Charts</span>
             </a>
             <div class="triangle"></div>
           </li>
@@ -87,8 +88,8 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Windows-2"></i>
-              <span class="nav-text">Widgets</span>
+              <i class="nav-icon i-Windows-2 text-white"></i>
+              <span class="nav-text text-white">Widgets</span>
             </a>
             <div class="triangle"></div>
           </li>
@@ -100,8 +101,8 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-File-Clipboard-File--Text"></i>
-              <span class="nav-text">Forms</span>
+              <i class="nav-icon i-File-Clipboard-File--Text text-white"></i>
+              <span class="nav-text text-white">Forms</span>
             </a>
             <div class="triangle"></div>
           </li>
@@ -113,11 +114,12 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-File-Horizontal-Text"></i>
-              <span class="nav-text">Datatables</span>
+              <i class="nav-icon i-File-Horizontal-Text text-white"></i>
+              <span class="nav-text text-white">Datatables</span>
             </a>
             <div class="triangle"></div>
-          </li>
+          </li>-->
+          <!--
           <li
             @mouseenter="toggleSubMenu"
             class="nav-item"
@@ -126,11 +128,25 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Administrator"></i>
-              <span class="nav-text">Sessions</span>
+              <i class="nav-icon i-Administrator text-white"></i>
+              <span class="nav-text text-white">Sessions</span>
             </a>
             <div class="triangle"></div>
+          </li>-->
+          <li
+            class="nav-item"
+            @mouseenter="toggleSubMenu"
+            :class="{ active: selectedParentMenu == 'datatables' }"
+            data-item="datatables"
+            :data-submenu="true"
+          >
+            <a class="nav-item-hold" href="#">
+              <i class="nav-icon i-Administrator text-white"></i>
+              <span class="nav-text text-white">Sessions</span>
+            </a>
+            <div class="triangle" style="background-color:white;"></div>
           </li>
+          <!--
           <li
             @mouseenter="toggleSubMenu"
             :class="{ active: selectedParentMenu == 'pages' }"
@@ -139,8 +155,8 @@
             :data-submenu="true"
           >
             <a class="nav-item-hold" href="#">
-              <i class="nav-icon i-Double-Tap"></i>
-              <span class="nav-text">Pages</span>
+              <i class="nav-icon i-Double-Tap text-white"></i>
+              <span class="nav-text text-white">Pages</span>
             </a>
             <div class="triangle"></div>
           </li>
@@ -156,11 +172,12 @@
               href="http://demos.ui-lib.com/gull-vue-doc/"
               target="_blank"
             >
-              <i class="nav-icon i-Safe-Box1"></i>
-              <span class="nav-text">Doc</span>
+              <i class="nav-icon i-Safe-Box1 text-white"></i>
+              <span class="nav-text text-white">Doc</span>
             </a>
             <div class="triangle"></div>
           </li>
+          -->
         </ul>
       </div>
     </vue-perfect-scrollbar>
@@ -178,13 +195,22 @@
           :class="{ 'd-block': selectedParentMenu == 'dashboards' }"
         >
           <li class="nav-item">
-            <router-link tag="a" class to="/app/dashboards/dashboard.v1">
+            <router-link tag="a" class to="/app/dashboards/dashboard.av1">
               <i class="nav-icon i-Clock-3"></i>
+              <span class="item-name">{{
+                $t("dashboardItems.versionAOne")
+              }}</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link tag="a" class to="/app/dashboards/dashboard.v1">
+              <i class="nav-icon i-Clock-4"></i>
               <span class="item-name">{{
                 $t("dashboardItems.versionOne")
               }}</span>
             </router-link>
           </li>
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/dashboards/dashboard.v2">
               <i class="nav-icon i-Clock-4"></i>
@@ -208,7 +234,7 @@
                 $t("dashboardItems.versionFour")
               }}</span>
             </router-link>
-          </li>
+          </li>-->
         </ul>
         <ul
           class="childNav d-none"
@@ -275,7 +301,7 @@
           class="childNav d-none"
           data-parent="forms"
           :class="{ 'd-block': selectedParentMenu == 'datatables' }"
-        >
+        ><!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/datatables/paging">
               <i class="nav-icon i-Split-Four-Square-Window"></i>
@@ -300,6 +326,19 @@
               <span class="item-name">Vue Good Table</span>
             </router-link>
           </li>
+          -->
+          <li class="nav-item">
+            <router-link tag="a" class to="/app/datatables/list">
+              <i class="nav-icon i-Add-User"></i>
+              <span class="item-name">Users</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link tag="a" class to="/app/datatables/vue-good-table">
+              <i class="nav-icon i-Add-User"></i>
+              <span class="item-name">Roles & Permissions</span>
+            </router-link>
+          </li>
         </ul>
 
         <ul
@@ -308,7 +347,7 @@
           :class="{ 'd-block': selectedParentMenu == 'apps' }"
         >
           <!-- invoice-list -->
-
+          <!--
           <li
             @click.prevent="toggleSidebarDropdwon($event)"
             class="nav-item dropdown-sidemenu"
@@ -338,9 +377,10 @@
                 </router-link>
               </li>
             </ul>
-          </li>
+          </li>-->
 
           <!-- contact app -->
+          <!--
           <li
             @click.prevent="toggleSidebarDropdwon($event)"
             class="nav-item dropdown-sidemenu"
@@ -385,13 +425,15 @@
                 ></span
               >
             </router-link>
-          </li>
+          </li>-->
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/taskManager">
               <i class="nav-icon i-Add-File"></i>
-              <span class="item-name">Task Manager</span>
+              <!--<span class="item-name">Task Manager</span>-->
+              <span class="item-name">Order</span>
             </router-link>
           </li>
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/todo-list">
               <i class="nav-icon i-Add-File"></i>
@@ -403,6 +445,9 @@
               >
             </router-link>
           </li>
+          -->
+          <!--
+          
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/contact-list-table">
               <i class="nav-icon i-Add-File"></i>
@@ -414,6 +459,7 @@
               >
             </router-link>
           </li>
+          
 
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/calendar">
@@ -421,13 +467,17 @@
               <span class="item-name">Calendar</span>
             </router-link>
           </li>
+          -->
+          
 
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/inbox">
               <i class="nav-icon i-Email"></i>
-              <span class="item-name">Inbox</span>
+              <!--<span class="item-name">Inbox</span>-->
+              <span class="item-name">Bikers</span>
             </router-link>
           </li>
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/chat">
               <i class="nav-icon i-Speach-Bubble-3"></i>
@@ -444,7 +494,7 @@
                 ></span
               >
             </router-link>
-          </li>
+          </li>-->
         </ul>
         <ul
           class="childNav d-none"
@@ -454,15 +504,16 @@
           <li class="nav-item">
             <router-link tag="a" class to="/app/extraKits/dropdown">
               <i class="nav-icon i-Arrow-Down"></i>
-              <span class="item-name">Dropdown</span>
+              <span class="item-name">Business Analytics</span>
             </router-link>
           </li>
           <li class="nav-item">
             <router-link tag="a" class to="/app/extraKits/imageCropper">
               <i class="nav-icon i-Crop-2"></i>
-              <span class="item-name">Image Cropper</span>
+              <span class="item-name">Revenue Analytics</span>
             </router-link>
           </li>
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/extraKits/loaders">
               <i class="nav-icon i-Loading-3"></i>
@@ -540,12 +591,13 @@
               <span class="ml-2 badge badge-pill badge-danger">New</span>
             </router-link>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="ladda.button.html">
               <i class="nav-icon i-Loading-2"></i>
               <span class="item-name">Ladda Buttons</span>
             </a>
-          </li>-->
+          </li>
+          
           <li class="nav-item">
             <router-link tag="a" class to="/app/extraKits/toasts">
               <i class="nav-icon i-Bell"></i>
@@ -563,7 +615,7 @@
               <i class="nav-icon i-Plane"></i>
               <span class="item-name">User Tour</span>
             </router-link>
-          </li>
+          </li>-->
         </ul>
         <ul
           class="childNav d-none"
@@ -573,7 +625,8 @@
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/alerts">
               <i class="nav-icon i-Bell1"></i>
-              <span class="item-name">Alerts</span>
+              <!--<span class="item-name">Alerts</span>-->
+              <span class="item-name">Product Groups</span>
             </router-link>
           </li>
           <!-- <li
@@ -600,15 +653,25 @@
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/accordion">
               <i class="nav-icon i-Split-Horizontal-2-Window"></i>
-              <span class="item-name">Accordion</span>
+              <!--<span class="item-name">Accordion</span>-->
+              <span class="item-name">Store Items</span>
             </router-link>
           </li>
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/badges">
               <i class="nav-icon i-Medal-2"></i>
-              <span class="item-name">Badges</span>
+              <!--<span class="item-name">Badges</span>-->
+              <span class="item-name">Business Hours</span>
             </router-link>
           </li>
+          <!--
+          <li class="nav-item">
+            <router-link tag="a" class to="/app/ui-kits/pagination">
+              <i class="nav-icon i-Arrow-Next"></i>
+              <span class="item-name">Paginations</span>
+            </router-link>
+          </li>
+          
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/buttons">
               <i class="nav-icon i-Cursor-Click"></i>
@@ -651,26 +714,27 @@
               <i class="nav-icon i-Loading"></i>
               <span class="item-name">Progressbar</span>
             </router-link>
-          </li>
+          </li>-->
           <!-- <li class="nav-item">
             <a href="tables.html">
               <i class="nav-icon i-File-Horizontal-Text"></i>
               <span class="item-name">Tables</span>
             </a>
           </li>-->
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/bootstrap-tab">
               <i class="nav-icon i-New-Tab"></i>
               <span class="item-name">Tabs</span>
             </router-link>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="tooltip.html">
               <i class="nav-icon i-Speach-Bubble-8"></i>
               <span class="item-name">Tooltip</span>
             </a>
           </li>-->
-
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/modals">
               <i class="nav-icon i-Duplicate-Window"></i>
@@ -689,7 +753,7 @@
               <i class="nav-icon i-Width-Window"></i>
               <span class="item-name">Typography</span>
             </router-link>
-          </li>
+          </li>-->
         </ul>
 
         <ul
@@ -823,21 +887,25 @@
           <li class="nav-item">
             <router-link tag="a" class to="/app/sessions/signIn">
               <i class="nav-icon i-Checked-User"></i>
+              <!--<span class="item-name">Sign in</span>-->
               <span class="item-name">Sign in</span>
             </router-link>
           </li>
           <li class="nav-item">
             <router-link tag="a" class to="/app/sessions/signUp">
               <i class="nav-icon i-Add-User"></i>
+              <!--<span class="item-name">Sign up</span>-->
               <span class="item-name">Sign up</span>
             </router-link>
           </li>
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/sessions/forgot">
               <i class="nav-icon i-Find-User"></i>
               <span class="item-name">Forgot</span>
             </router-link>
           </li>
+          -->
         </ul>
         <ul
           class="childNav d-none"
@@ -909,14 +977,14 @@
 </template>
 
 <script>
-import Topnav from "./TopNav";
+//import Topnav from "./TopNav";
 import { isMobile } from "mobile-device-detect";
 
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: {
-    Topnav,
+    //Topnav
   },
 
   data() {

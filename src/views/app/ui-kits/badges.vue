@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
-    <breadcumb :page="'Badges'" :folder="'UI Kits'" />
-
+    <breadcumb :page="'Business Hours'" :folder="'Business'" :folder2="'Hours'" />
+    <!--
     <b-row>
       <b-col md="6">
         <b-card title="Badge Outline" class="mb-30">
@@ -53,7 +53,7 @@
 
       
 
-      <!-- begin::basic-example -->
+      
     </b-row>
     <b-row>
       <b-col md="6">
@@ -157,9 +157,10 @@
             </li>
           </ul>
         </b-card>
-      </b-col>
+      </b-col>-->
+      <!--
       <b-col md="6">
-        <!-- begin::unified-Styles -->
+        
         <b-card title="Unified Styles" class="mb-30">
           <ul class="list-group list-group-flash">
             <h6 class="card-subtitle mt-2 mb-2 text-muted">Circle and Square Unified Styles</h6>
@@ -257,7 +258,93 @@
       </b-col>
 
       
-    </b-row>
+    </b-row>-->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <div class="card text-left">
+            <div style="display: flex; justify-content:space-between; background-color:#f1eaea;" class="p-3 rounded text-center">
+              <h4 class="card-title mb-3">Opening Days/Time </h4>
+              <p>
+                Hello
+              </p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead style="text-align:center;">
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Days</th>
+                              <th scope="col">Opening Date</th>
+                              <th scope="col">Closing Date</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody style="text-align:center;">
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Monday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-success">Open</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Tuesday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-success">Open</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Wednesday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-success">Open</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Thursday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-success">Open</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Friday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-danger">Closed</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">6</th>
+                              <td>Saturday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-danger">Closed</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">7</th>
+                              <td>Sunday</td>
+                              <td>9:00 am</td>
+                              <td>5:00 pm</td>
+                              <td><span class="badge badge-danger">Closed</span></td>
+                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
   </div>
 </template>
 <script>

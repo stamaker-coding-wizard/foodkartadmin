@@ -58,7 +58,12 @@
                 :class="{ 'vertical-item-name': getVerticalCompact.isItemName }"
               >
                 <li>
-                  <router-link tag="a" class to="/app/dashboards/dashboard.v1">
+                  <router-link tag="a" class to="/app/dashboards/dashboard.av1">
+                    <span>Dashboard av1</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link tag="a" to="/app/dashboards/dashboard.v1" class>
                     <span>Dashboard v1</span>
                   </router-link>
                 </li>

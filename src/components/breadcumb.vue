@@ -5,7 +5,7 @@
                <h1>{{page}}</h1>
                     <ul>
                         <li><a href=""> {{folder}} </a></li>
-                        <li> {{page}} </li>
+                        <li> {{folder2}} </li>
                     </ul>
             </slot>
         </div>
@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-    props:['page','folder'],
+    props:['page','folder', 'folder2'],
    
 }
 </script>
