@@ -195,7 +195,7 @@
           :class="{ 'd-block': selectedParentMenu == 'dashboards' }"
         >
           <li class="nav-item">
-            <router-link tag="a" class to="/app/dashboards/dashboard.av1">
+            <router-link tag="a" class to="/Dashboard/analytics/business">
               <i class="nav-icon i-Clock-3"></i>
               <span class="item-name">{{
                 $t("dashboardItems.versionAOne")
@@ -203,7 +203,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link tag="a" class to="/app/dashboards/dashboard.v1">
+            <router-link tag="a" class to="/Dashboard/analytics/revenue">
               <i class="nav-icon i-Clock-4"></i>
               <span class="item-name">{{
                 $t("dashboardItems.versionOne")
@@ -502,6 +502,19 @@
           :class="{ 'd-block': selectedParentMenu == 'extrakits' }"
         >
           <li class="nav-item">
+            <router-link tag="a" class to="/business/analytics/business">
+              <i class="nav-icon i-Arrow-Down"></i>
+              <span class="item-name">Business Analytics</span>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link tag="a" class to="/business/analytics/revenue">
+              <i class="nav-icon i-Crop-2"></i>
+              <span class="item-name">Revenue Analytics</span>
+            </router-link>
+          </li>
+          <!--
+          <li class="nav-item">
             <router-link tag="a" class to="/app/extraKits/dropdown">
               <i class="nav-icon i-Arrow-Down"></i>
               <span class="item-name">Business Analytics</span>
@@ -512,7 +525,7 @@
               <i class="nav-icon i-Crop-2"></i>
               <span class="item-name">Revenue Analytics</span>
             </router-link>
-          </li>
+          </li>-->
           <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/extraKits/loaders">
@@ -650,15 +663,23 @@
               </li>
             </ul>
           </li>-->
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/ui-kits/accordion">
+              <i class="nav-icon i-Split-Horizontal-2-Window"></i>
+              <<span class="item-name">Accordion</span>
+              <span class="item-name">Store Items</span>
+            </router-link>
+          </li>-->
+          <li class="nav-item">
+            <router-link tag="a" class to="/vendors/category/items">
               <i class="nav-icon i-Split-Horizontal-2-Window"></i>
               <!--<span class="item-name">Accordion</span>-->
               <span class="item-name">Store Items</span>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link tag="a" class to="/app/ui-kits/badges">
+            <router-link tag="a" class to="/vendors/category/business">
               <i class="nav-icon i-Medal-2"></i>
               <!--<span class="item-name">Badges</span>-->
               <span class="item-name">Business Hours</span>

@@ -14,7 +14,7 @@ const routes = [
     path: "/",
     component: () => import("./views/app"), //webpackChunkName app
     beforeEnter: authenticate,
-    redirect: "/app/dashboards/dashboard.v1",
+    redirect: "/Dashboard/analytics/business",
 
     children: [
       {
@@ -132,8 +132,30 @@ const routes = [
         ],
       },
 
-       //vendors
-       {
+       
+      //Dashboard
+      {
+        path: "/Dashboard/analytics",
+        component: () => import("./views/Dashboard/analytics"),
+        redirect: "/Dashboard/analytics/business",
+        children: [
+          {
+            path: "business",
+            name: "business",
+            component: () => import("./views/Dashboard/analytics/business"),
+          },
+          {
+            path: "revenue",
+            name: "revenue",
+            component: () => import("./views/Dashboard/analytics/revenue"),
+          },
+        
+          
+        ],
+      },
+
+      //vendors
+      {
         path: "/vendors/category",
         component: () => import("./views/vendors/category"),
         redirect: "/vendors/category/list",
@@ -143,75 +165,37 @@ const routes = [
             name: "list",
             component: () => import("./views/vendors/category/list"),
           },
-          // {
-          //   path: "accordion",
-          //   name: "accordion",
-          //   component: () => import("./views/app/ui-kits/accordion"),
-          // },
-          // {
-          //   path: "badges",
-          //   name: "badges",
-          //   component: () => import("./views/app/ui-kits/badges"),
-          // },
-          // {
-          //   path: "buttons",
-          //   name: "buttons",
-          //   component: () => import("./views/app/ui-kits/buttons"),
-          // },
-          // {
-          //   path: "bootstrap-tab",
-          //   name: "bootstrap-tab",
-          //   component: () => import("./views/app/ui-kits/bootstrap-tab"),
-          // },
-          // {
-          //   path: "cards",
-          //   name: "cards",
-          //   component: () => import("./views/app/ui-kits/cards"),
-          // },
-          // {
-          //   path: "list",
-          //   name: "list",
-          //   component: () => import("./views/app/ui-kits/list"),
-          // },
-          // {
-          //   path: "popover",
-          //   name: "popover",
-          //   component: () => import("./views/app/ui-kits/popover"),
-          // },
-          // {
-          //   path: "progressbar",
-          //   name: "progressbar",
-          //   component: () => import("./views/app/ui-kits/progressbar"),
-          // },
-          // {
-          //   path: "collapsible",
-          //   name: "collapsible",
-          //   component: () => import("./views/app/ui-kits/collapsible"),
-          // },
-          // {
-          //   path: "modals",
-          //   name: "modals",
-          //   component: () => import("./views/app/ui-kits/modals"),
-          // },
-          // {
-          //   path: "typography",
-          //   name: "typography",
-          //   component: () => import("./views/app/ui-kits/typography"),
-          // },
-          // {
-          //   path: "carousel",
-          //   name: "carousel",
-          //   component: () => import("./views/app/ui-kits/carousel"),
-          // },
-          // {
-          //   path: "pagination",
-          //   name: "pagination",
-          //   component: () => import("./views/app/ui-kits/pagination"),
-          // },
-          // {
-          //   path: "slider",
-          //   component: () => import("./views/app/ui-kits/sliders")
-          // }
+          {
+            path: "items",
+            name: "items",
+            component: () => import("./views/vendors/category/items"),
+          },
+          {
+            path: "business",
+            name: "business",
+            component: () => import("./views/vendors/category/business"),
+          },
+          
+        ],
+      },
+      //business
+      {
+        path: "/business/analytics",
+        component: () => import("./views/business/analytics"),
+        redirect: "/business/analytics/business",
+        children: [
+          {
+            path: "business",
+            name: "business",
+            component: () => import("./views/business/analytics/business"),
+          },
+          {
+            path: "revenue",
+            name: "revenue",
+            component: () => import("./views/business/analytics/revenue"),
+          }
+          
+          
         ],
       },
 
