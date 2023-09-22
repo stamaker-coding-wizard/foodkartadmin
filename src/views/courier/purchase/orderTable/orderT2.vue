@@ -83,17 +83,34 @@
                 <form @submit.prevent="saveEditedRow2">
                 <!-- Populate input fields with data from selectedRow -->
                 <!-- Example: -->
+                <!--
                 <div class="form-group">
                     <label for="editRecipient">Recipient:</label>
                     <input type="text" class="form-control" v-model="selectedRow.recipent">
-                </div>
+                </div>-->
                 <div class="form-group">
                     <label for="editMerchant">Merchant:</label>
                     <input type="text" class="form-control" v-model="selectedRow.Merchant">
                 </div>
                 <div class="form-group">
                     <label for="editStatus">Status:</label>
-                    <input type="text" class="form-control" v-model="selectedRow.status">
+                    
+                    <select v-model="selectedRow.status" class="form-control" id="editItems">
+                        <option value="Pending">Pending</option>
+                        <option value="Waiting">Waiting</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Processing">Processing</option>
+                        
+                        <!-- ... options for other days ... -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editItems1">items1:</label>
+                    <input type="text" class="form-control" v-model="selectedRow.items1">
+                </div>
+                <div class="form-group">
+                    <label for="editItems2">Items2:</label>
+                    <input type="text" class="form-control" v-model="selectedRow.items2">
                 </div>
                 <!-- Add more fields as needed -->
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -120,6 +137,8 @@ export default{
                 recipent: '',
                 Merchant: '',
                 status: '',
+                items1: '',
+                items2: '',
                 // Add more fields as needed
             },
 
@@ -242,6 +261,8 @@ export default{
         this.newRow = {
             recipent: '',
             status: '',
+            items1: '',
+            items2: '',
             // Initialize other fields as needed
         };
 

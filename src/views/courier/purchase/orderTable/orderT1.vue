@@ -26,7 +26,7 @@
                         <td>
                             <input type="checkbox" v-model="person.selected">
                         </td>
-                        <td><img :src="person.recipent" class="img"></td>
+                        <td><img v-bind:src="person.recipent" class="img"></td>
                         <td><img :src="person.Merchant" class="img"></td>
                         <td> {{person.status}} </td>
                         <td>
@@ -66,6 +66,19 @@
                         <label for="newStatus">Status:</label>
                         <input type="text" class="form-control" v-model="newRow.status">
                     </div>
+                    <div class="form-group">
+                        <label for="newItems">Items:</label>
+                        
+                        <select v-model="newRow.items" class="form-control" id="newItems">
+                            <option value="Pending">Pending</option>
+                            <option value="Waiting">Waiting</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Processing">Processing</option>
+                            
+                      
+                            <!-- ... options for other days ... -->
+                        </select>
+                    </div>
                     
                     <!-- Add more fields as needed -->
                     <button type="submit" class="btn btn-primary">Add</button>
@@ -78,13 +91,40 @@
                 <form @submit.prevent="saveEditedRow">
                 <!-- Populate input fields with data from selectedRow -->
                 <!-- Example: -->
+                <!--
                 <div class="form-group">
                     <label for="editRecipient">Recipient:</label>
-                    <input type="text" class="form-control" v-model="selectedRow.recipent">
-                </div>
+                    
+                    <ol>
+                        <li v-for="food in people" v-on:click="people.recipent=food.recipent" class="form-control" v-model="selectedRow.imgUrl" style="cursor:pointer">
+                        {{ food.name }}
+                        </li>
+                    </ol>
+                </div>-->
                 <div class="form-group">
                     <label for="editStatus">Status:</label>
                     <input type="text" class="form-control" v-model="selectedRow.status">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="editItems">Items:</label>
+            
+                    <select v-model="selectedRow.items" class="form-control" id="editItems">
+                        <option value="Pending">Pending</option>
+                        <option value="Waiting">Waiting</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Processing">Processing</option>
+                        
+                        <!-- ... options for other days ... -->
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="editFees1">Fees1:</label>
+                    <input type="text" class="form-control" v-model="selectedRow.fees1">
+                </div>
+                <div class="form-group">
+                    <label for="editFees2">Fees2:</label>
+                    <input type="text" class="form-control" v-model="selectedRow.fees2">
                 </div>
                 <!-- Add more fields as needed -->
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -99,6 +139,7 @@ export default{
     name: 'orderT1',
     data(){
         return{
+            
             // New data properties for modals and editing
             addRowModal: false,
             editRowModal: false,
@@ -106,7 +147,11 @@ export default{
             newRow: {
                 // Initialize with default values for the new row fields
                 recipent: '',
+                imgUrl: '',
                 status: '',
+                items: '',
+                fees1: '',
+                fees2: '',
                 // Add more fields as needed
             },
 
@@ -117,11 +162,11 @@ export default{
             currentPage: 1,
             
             people: [
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Waiting',  fees1:'UI Lib', fees2:'Angular 2.Vue.js'},
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Waiting',  fees1:'UI Lib', fees2:'Angular 2.Vue.js' },
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Delivered', fees1:'UI Lib', fees2:'Angular 2.Vue.js' },
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Delivered', fees1:'UI Lib', fees2:'Angular 2.Vue.js'},
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Processing',  fees1:'UI Lib', fees2:'Angular 2.Vue.js' }
+                { selected: false, name: 'potato', recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Waiting',  fees1:'UI Lib', fees2:'Angular 2.Vue.js'},
+                { selected: false, name: 'yam', recipent: require("@/assets/images/products/foodkart-image2.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Waiting',  fees1:'UI Lib', fees2:'Angular 2.Vue.js' },
+                { selected: false, name: 'egg', recipent: require("@/assets/images/products/foodkart-image3.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Delivered', fees1:'UI Lib', fees2:'Angular 2.Vue.js' },
+                { selected: false, name: 'potatoss', recipent: require("@/assets/images/products/foodkart-image4.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Delivered', fees1:'UI Lib', fees2:'Angular 2.Vue.js'},
+                { selected: false, name: 'orange', recipent: require("@/assets/images/products/foodkart-image2.jpg"), Merchant: require("@/assets/images/products/foodkart-image.jpg"), status: '11/28/2016', items: 'Processing',  fees1:'UI Lib', fees2:'Angular 2.Vue.js' }
                 
             ],
             people2: [
@@ -195,7 +240,11 @@ export default{
         // Clear the newRow data for the next entry
         this.newRow = {
             recipent: '',
+            imgUrl: '',
             status: '',
+            items: '',
+            fees1: '',
+            fees2: '',
             // Initialize other fields as needed
         };
         },
