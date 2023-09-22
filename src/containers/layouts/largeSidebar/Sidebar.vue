@@ -327,14 +327,30 @@
             </router-link>
           </li>
           -->
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/datatables/list">
               <i class="nav-icon i-Add-User"></i>
               <span class="item-name">Users</span>
             </router-link>
+          </li>-->
+
+          <li class="nav-item">
+            <router-link tag="a" class to="/sessions/profile/user">
+              <i class="nav-icon i-Add-User"></i>
+              <span class="item-name">Users</span>
+            </router-link>
           </li>
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/datatables/vue-good-table">
+              <i class="nav-icon i-Add-User"></i>
+              <span class="item-name">Roles & Permissions</span>
+            </router-link>
+          </li>-->
+
+          <li class="nav-item">
+            <router-link tag="a" class to="/sessions/profile/roles">
               <i class="nav-icon i-Add-User"></i>
               <span class="item-name">Roles & Permissions</span>
             </router-link>
@@ -426,8 +442,16 @@
               >
             </router-link>
           </li>-->
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/taskManager">
+              <i class="nav-icon i-Add-File"></i>
+              <span class="item-name">Task Manager</span>
+             
+            </router-link>
+          </li>-->
+          <li class="nav-item">
+            <router-link tag="a" class to="/courier/purchase/order">
               <i class="nav-icon i-Add-File"></i>
               <!--<span class="item-name">Task Manager</span>-->
               <span class="item-name">Order</span>
@@ -469,9 +493,17 @@
           </li>
           -->
           
-
+          <!---->
+          <!--
           <li class="nav-item">
             <router-link tag="a" class to="/app/apps/inbox">
+              <i class="nav-icon i-Email"></i>
+              <span class="item-name">Inbox</span>
+              
+            </router-link>
+          </li>-->
+          <li class="nav-item">
+            <router-link tag="a" class to="/courier/purchase/bikers">
               <i class="nav-icon i-Email"></i>
               <!--<span class="item-name">Inbox</span>-->
               <span class="item-name">Bikers</span>

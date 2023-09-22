@@ -1,10 +1,13 @@
  <template>
+ 
   <div class="footer_wrap">
-    <!-- Footer Start -->
+    <!--
+    Footer Start 
     <div class="flex-grow-1"></div>
     <div class="app-footer">
       <div class="row">
         <div class="col-md-9">
+         
           <p><strong>Gull - Vuejs Admin Dashboard Template</strong></p>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
@@ -12,6 +15,7 @@
             voluptates dolorum, temporibus nisi maxime nesciunt totam
             repudiandae commodi sequi dolor quibusdam sunt.
           </p>
+        
         </div>
       </div>
       <div
@@ -33,18 +37,22 @@
             </div>
           </div>
           <span class="flex-grow-1"></span>
-          <!-- <a
+        <a
             class="btn btn-primary text-white btn-rounded"
             href="https://themeforest.net/item/gull-vuejs-admin-dashboard-template/24497287?ref=ui-lib"
             target="_blank"
             >Buy Gull Vue</a
-          > -->
+          > 
         </div>
       </div>
-      <!-- fotter end -->
+       fotter end 
     </div>
+  -->
   </div>
+
 </template> 
+
+<!---->
 <script>
 export default {
   data() {
@@ -54,6 +62,6 @@ export default {
 };
 </script>
 
-
+<!--
 <style lang="scss" scoped>
-</style> 
+</style> -->

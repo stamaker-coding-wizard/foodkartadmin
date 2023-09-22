@@ -7,7 +7,7 @@
                 <div class="card text-left">
                     <div class="card-body">
                         <div style="display: flex; justify-content:space-between; align-items:center;">
-                            <h4 class="card-title mb-3">All Orders </h4>
+                            <h4 class="card-title mb-3">Canceled</h4>
                             <b-button size="lg" variant="" @click="addtable()" style="backgroud-color:white;">ADD</b-button>
                         </div>
                         <div class="table-responsive">
@@ -35,7 +35,7 @@
                                     <td>{{ day.date }} </td>
                                     
                                     <td>
-                                        <span :class="day.status === 'Approved' ? 'badge badge-success' : 'badge badge-danger' && day.status === 'Pending' ? 'badge badge-primary' : 'badge badge-danger' ">
+                                        <span :class="day.status === 'Canceled' ? 'badge badge-danger' : 'badge badge-success'">
                                         {{ day.status }}
                                         </span>
                                     </td>
@@ -105,9 +105,8 @@
             <div class="form-group">
                 <label for="editStatus">Status</label>
                 <select v-model="editRowData.status" class="form-control" id="editStatus">
-                    <option value="Approved">Approved</option>
+                    
                     <option value="Canceled">Canceled</option>
-                    <option value="Pending">Pending</option>
                 </select>
             </div>
 
@@ -177,9 +176,7 @@
               <div class="form-group">
                   <label for="Status">Status</label>
                   <select v-model="newRow.status" class="form-control" id="Status">
-                    <option value="Approved">Approved</option>
                     <option value="Canceled">Canceled</option>
-                    <option value="Pending">Pending</option>
                   </select>
               </div>
 
@@ -208,7 +205,7 @@
 import { BModal, BButton } from "bootstrap-vue";
 
 export default {
-    name: 'allTranscation',
+    name: 'Canceled',
     metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
         title: "DropDown"
@@ -236,23 +233,14 @@ export default {
         amount: "",
         order: "",
         date: "",
-        status: "Approved",
+        status: "Canceled",
         payment: "",
       },
       
       openingHours: [
+       
         {
           id: 1,
-          reference: "TR213458WEN",
-          customer: "John Smith",
-          orderid: "ASDR34R",
-          amount: "8000",
-          date: "23-05-2014",
-          status: "Pending",
-          payment: "Card"
-        },
-        {
-          id: 2,
           reference: "TR213458WEN",
           customer: "John Smith",
           orderid: "ASDR34R",
@@ -260,17 +248,8 @@ export default {
           date: "23-05-2014",
           status: "Canceled",
           payment: "Card"
-        },
-        {
-          id: 3,
-          reference: "TR213458WEN",
-          customer: "John Smith",
-          orderid: "ASDR34R",
-          amount: "2000",
-          date: "23-05-2014",
-          status: "Approved",
-          payment: "Card"
         }
+       
         
         
 
@@ -326,7 +305,7 @@ export default {
         amount: "",
         order: "",
         date: "",
-        status: "Approved",
+        status: "Canceled",
         payment: "",
       };
       this.showAddModal = false;

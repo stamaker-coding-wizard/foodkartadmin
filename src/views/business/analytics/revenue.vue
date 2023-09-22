@@ -2,72 +2,7 @@
     <div class="main-content">
       <breadcumb :page="'Revenue Transactions'" :folder="'Revenue'"  :folder2="'Orders'" />
   
-      <!-- imageCropper -->
-      <!--
-      <b-row>
-        <b-col md="6 mb-30">
-          <b-card title="Input Crop Image">
-            <input
-              type="file"
-              name="image"
-              accept="image/*"
-              style="font-size: 1.2em; padding: 10px 0;"
-              @change="setImage"
-            />
-  
-            <br />
-            <div
-              style="width: 100%; height:100%; border: 1px solid gray; display: inline-block;"
-            >
-              <h4>Insert Image</h4>
-              <vue-cropper
-                ref="cropper"
-                :guides="true"
-                :view-mode="2"
-                drag-mode="crop"
-                :auto-crop-area="0.5"
-                :min-container-width="250"
-                :min-container-height="180"
-                :background="true"
-                :rotatable="true"
-                :src="imgSrc"
-                alt="Source Image"
-                :img-style="{ width: '400px', height: '300px' }"
-              >
-              </vue-cropper>
-            </div>
-  
-            <br />
-            <br />
-  
-            <div class="mt-4">
-              <b-button
-                class="m-2"
-                variant="primary"
-                @click="cropImage"
-                v-if="imgSrc != ''"
-                >Crop</b-button
-              >
-              <b-button
-                class="m-2"
-                variant="success"
-                @click="rotate"
-                v-if="imgSrc != ''"
-                >Rotate</b-button
-              >
-            </div>
-          </b-card>
-        </b-col>
-        <b-col md="6">
-          <b-card title="Output Crop Image">
-            <img
-              :src="cropImg"
-              style="width: 100%; height: 100%; border: 1px solid gray"
-              alt="Cropped Image"
-            />
-          </b-card>
-        </b-col>
-      </b-row>-->
+     
   
       <div class="row">
         <b-col md="12">
@@ -82,73 +17,16 @@
                 content-class="mt-3"
                 >
                     <b-tab title="All Transactions" active>
-                        <div class="row">
-                            <div class="col-md-12 mb-3">
-                                <div class="card text-left">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">All Transaction </h4>
-                                        
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Reference</th>
-                                                        <th scope="col">Customer</th>
-                                                        <th scope="col">Orderid</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Payment Type</th>
-                                                        <th scope="col">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">TR213458WEN</th>
-                                                        <td>Smith Doe</td>
-                                                        <th scope="row">ASDR34R</th>
-                                                        <td>5000</td>
-                                                        <td>12-10-2019</td>
-                                                        <td><span class="badge badge-warning">Pending</span></td>
-                                                        <td>Card</td>
-                                                        <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <th scope="row">TR213458WEN</th>
-                                                      <td>Smith Doe</td>
-                                                      <th scope="row">ASDR34R</th>
-                                                      <td>5000</td>
-                                                      <td>12-10-2019</td>
-                                                      <td><span class="badge badge-danger">Canceled</span></td>
-                                                      <td>Card</td>
-                                                      <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <th scope="row">TR213458WEN</th>
-                                                      <td>Smith Doe</td>
-                                                      <th scope="row">ASDR34R</th>
-                                                      <td>5000</td>
-                                                      <td>12-10-2019</td>
-                                                      <td><span class="badge badge-success">Approved</span></td>
-                                                      <td>Card</td>
-                                                      <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <allTranscation/>
                     </b-tab>
                     <b-tab title="Approved">
-                        <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <Approved/>
                     </b-tab>
                     <b-tab title="Canceled" >
-                        <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <Canceled/>
                     </b-tab>
                     <b-tab title="Pending">
-                        <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <Pending/>
                     </b-tab>
                     
                 </b-tabs>         
@@ -160,10 +38,18 @@
   <script>
   //import VueCropper from "vue-cropperjs";
   import "cropperjs/dist/cropper.css";
+  import allTranscation from './revenueTable/allTran.vue';
+  import Approved from './revenueTable/approved.vue';
+  import Pending from './revenueTable/pending.vue';
+  import Canceled from './revenueTable/canceled.vue';
   
   export default {
     components: {
       //VueCropper
+      allTranscation,
+      Approved,
+      Pending,
+      Canceled,
     },
     metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used

@@ -199,6 +199,44 @@ const routes = [
         ],
       },
 
+      //courier
+      {
+        path: "/courier/purchase",
+        component: () => import("./views/courier/purchase"),
+        redirect: "/courier/purchase/order",
+        children: [
+          {
+            path: "order",
+            name: "order",
+            component: () => import("./views/courier/purchase/order"),
+          },
+          {
+            path: "bikers",
+            name: "bikers",
+            component: () => import("./views/courier/purchase/bikers"),
+          }
+          
+          
+        ],
+      },
+      {
+        path: "/sessions/profile",
+        component: () => import("./views/sessions/profile"),
+        redirect: "/sessions/profile/user",
+        children: [
+          {
+            path: "user",
+            name: "user",
+            component: () => import("./views/sessions/profile/user"),
+          },
+          {
+            path: "roles",
+            name: "roles",
+            component: () => import("./views/sessions/profile/roles")
+          }
+        ]
+      },
+
 
       //uiExtraKits
       {

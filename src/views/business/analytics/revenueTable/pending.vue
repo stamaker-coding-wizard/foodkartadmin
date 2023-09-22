@@ -35,7 +35,7 @@
                                     <td>{{ day.date }} </td>
                                     
                                     <td>
-                                        <span :class="day.status === 'Approved' ? 'badge badge-success' : 'badge badge-danger' && day.status === 'Pending' ? 'badge badge-primary' : 'badge badge-danger' ">
+                                        <span :class="day.status === 'Pending' ? 'badge badge-info' : 'badge badge-danger' ">
                                         {{ day.status }}
                                         </span>
                                     </td>
@@ -105,9 +105,8 @@
             <div class="form-group">
                 <label for="editStatus">Status</label>
                 <select v-model="editRowData.status" class="form-control" id="editStatus">
-                    <option value="Approved">Approved</option>
-                    <option value="Canceled">Canceled</option>
                     <option value="Pending">Pending</option>
+                    
                 </select>
             </div>
 
@@ -177,9 +176,8 @@
               <div class="form-group">
                   <label for="Status">Status</label>
                   <select v-model="newRow.status" class="form-control" id="Status">
-                    <option value="Approved">Approved</option>
-                    <option value="Canceled">Canceled</option>
                     <option value="Pending">Pending</option>
+                    
                   </select>
               </div>
 
@@ -208,7 +206,7 @@
 import { BModal, BButton } from "bootstrap-vue";
 
 export default {
-    name: 'allTranscation',
+    name: 'Pending',
     metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
         title: "DropDown"
@@ -236,7 +234,7 @@ export default {
         amount: "",
         order: "",
         date: "",
-        status: "Approved",
+        status: "Pending",
         payment: "",
       },
       
@@ -250,30 +248,8 @@ export default {
           date: "23-05-2014",
           status: "Pending",
           payment: "Card"
-        },
-        {
-          id: 2,
-          reference: "TR213458WEN",
-          customer: "John Smith",
-          orderid: "ASDR34R",
-          amount: "5000",
-          date: "23-05-2014",
-          status: "Canceled",
-          payment: "Card"
-        },
-        {
-          id: 3,
-          reference: "TR213458WEN",
-          customer: "John Smith",
-          orderid: "ASDR34R",
-          amount: "2000",
-          date: "23-05-2014",
-          status: "Approved",
-          payment: "Card"
         }
-        
-        
-
+       
         
     
         // Add similar data for other days
@@ -326,7 +302,7 @@ export default {
         amount: "",
         order: "",
         date: "",
-        status: "Approved",
+        status: "Pending",
         payment: "",
       };
       this.showAddModal = false;
