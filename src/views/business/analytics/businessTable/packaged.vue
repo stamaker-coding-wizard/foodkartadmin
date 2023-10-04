@@ -8,7 +8,10 @@
                     <div class="card-body">
                         <div style="display: flex; justify-content:space-between; align-items:center;">
                             <h4 class="card-title mb-3">Packaged </h4>
-                            <b-button size="lg" variant="" @click="addtable()" style="backgroud-color:white;">ADD</b-button>
+                            <b-button variant="primary ripple btn-icon m-1" @click="addtable()" style="border-radius:25px">
+                                
+                                <span class="ul-btn__text ml-1">ADD</span>
+                            </b-button>
                         </div>
                         <div class="table-responsive">
                             <table class="table">
@@ -41,13 +44,14 @@
                                     </td>
                                     <td>{{ day.payment }}</td>
                                     <td>
-                                        <b-dropdown text="Actions">
-                                        <b-dropdown-item @click="deleteRow(index)">Delete</b-dropdown-item>
-                                        <b-dropdown-item @click="editRow(index)">Edit</b-dropdown-item>
+                          
+                                        <a class="text-success mr-2" @click="editRow(index)" style="cursor:pointer;"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+  
+                                        <a class="text-danger mr-2" @click="addChatRow(index)" style="cursor:pointer;"><i class="nav-icon i-Speach-Bubble-3 font-weight-bold"></i></a>
+  
+                                        <a class="text-danger mr-2" @click="deleteRow(index)" style="cursor:pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></a>
                                         
-            
-                                        </b-dropdown>
-                                    </td>
+                                      </td>
                                 
                                     </tr>
                                 </tbody>
@@ -60,6 +64,7 @@
 
         <b-modal v-model="showEditModal" title="Edit Row">
             <form @submit.prevent="updateTableRow">
+                <!--
             <div class="form-group">
                 <label for="editOrderId">OrderId</label>
                 <select v-model="editRowData.orderid" class="form-control" id="editOrderId">
@@ -70,7 +75,7 @@
                     <option value="ASDR38R">ASDR38R</option>
                     <option value="ASDR39R">ASDR39R</option>
                     
-                    <!-- ... options for other days ... -->
+                    
                 </select>
             </div>
             <div class="form-group">
@@ -88,7 +93,7 @@
                     <option value="antibiotics">antibiotics</option>
                     <option value="antibiotics">antibiotics</option>
                     
-                    <!-- ... options for other days ... -->
+                    
                 </select>
             </div>
             <div class="form-group">
@@ -109,7 +114,7 @@
                     <option value="Cash On Delivery">Cash On Delivery</option>
                     
                     
-                    <!-- ... options for other days ... -->
+                    
                 </select>
             </div>
             <div class="form-group">
@@ -121,11 +126,13 @@
             </div>
             <b-button type="submit" variant="primary">Save Changes</b-button>
             <b-button variant="secondary" @click="showEditModal = false">Cancel</b-button>
+            -->
             </form>
         </b-modal>
         <!-- Add Table Row Modal -->
         <b-modal v-model="showAddModal" title="Add New Row">
             <form @submit.prevent="addTableRow">
+                <!--
                 <div class="form-group">
                     <label for="orderid">OrderId</label>
                     <select v-model="newRow.orderid" class="form-control" id="orderid">
@@ -135,7 +142,7 @@
                         <option value="ASDR37R">ASDR34R</option>
                         <option value="ASDR38R">ASDR38R</option>
                         <option value="ASDR39R">ASDR39R</option>
-                    <!-- Add options for other days here -->
+                  
                     </select>
 
                     
@@ -159,7 +166,7 @@
                         <option value="antibiotics">antibiotics</option>
                         <option value="antibiotics">antibiotics</option>
                         
-                        <!-- ... options for other days ... -->
+                        
                     </select>
                 </div>
 
@@ -186,7 +193,7 @@
                         <option value="Cash On Delivery">Cash On Delivery</option>
                         
                         
-                        <!-- ... options for other days ... -->
+                      
                     </select>
                 </div>
                 
@@ -201,7 +208,13 @@
 
                 <b-button type="submit" variant="primary">Add</b-button>
                 <b-button variant="secondary" @click="showAddModal = false">Cancel</b-button>
+                -->
             </form>
+        </b-modal>
+
+        <!--Adding ChatBox Modal-->
+        <b-modal v-model="showPackagedChart" size="lg">
+            <PackagedChart/>
         </b-modal>
     </div>
 </template>
@@ -209,6 +222,7 @@
 
 <script>
 import { BModal, BButton } from "bootstrap-vue";
+import PackagedChart from './chart/packaged.vue';
 
 export default {
     name: 'packaged',
@@ -221,6 +235,7 @@ export default {
     // Register Bootstrap-Vue components
     BModal,
     BButton,
+    PackagedChart,
   },
   
 
@@ -230,6 +245,7 @@ export default {
       showEditModal: false, // Control edit modal visibility
       editRowData: {}, // Data for the row being edited
       editRowIndex: -1, // Index of the row being edited
+      showPackagedChart: false, //Control chart modal visibility
 
       showAddModal: false, // Control modal visibility
       newRow: {
@@ -310,6 +326,10 @@ export default {
         payment: "",
       };
       this.showAddModal = false;
+    },
+    addChatRow(){
+      
+      this.showPackagedChart = true;
     }
     
     

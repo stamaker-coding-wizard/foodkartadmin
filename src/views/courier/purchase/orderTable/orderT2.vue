@@ -1,17 +1,19 @@
 <template>
     <div>
-        <div style="display: flex; justify-content:space-between; background-color:#fff;" class="p-3 rounded text-center">
+        <div style="display: flex; justify-content:space-between;align-items:center; background-color:#fff;" class="p-3 rounded text-center">
             <h4 class="card-title mb-3">Exclusive datatable plugin</h4>
             <p>
-                <!--
-              <button @click="addTableRow2()" style="background-color:#fff; p-3">ADD</button>-->
+                <b-button variant="primary ripple btn-icon m-1" @click="addTableRow2()" style="border-radius:25px">
+                    
+                    <span class="ul-btn__text ml-1">ADD</span>
+                </b-button>
             </p>
         </div>
 
         <div class="table-responsive">
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr style="text-align:center;">
                         <th scope="col">#</th>
                         <th scope="col">Recipent </th>
                         <th scope="col">Merchant </th>
@@ -23,26 +25,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(person, index) in people2" :key="index">
+                    <tr v-for="(person, index) in people2" :key="index" style="text-align:center;">
                         <td>
                             <input type="checkbox" v-model="person.selected">
                           </td>
                         <td><img :src="person.recipent" class="img"></td>
-                        <td>{{person.Merchant}}</td>
+                        <td><h5>{{ person.Merchant }}</h5></td>
                         <td>
                             <b-button :variant="getColorVariant(index)" class="m-1">{{ person.status }}</b-button>
                         </td>
                         
-                        <td>{{person.items1}}
-                            <br> {{ person.items2 }}
+                        <td>{{person.items}}
+                            
                         </td>
-                        <td><button class="btn btn-transparent">...</button></td>
+                        <td>{{person.fees}}</td>
                         <td>
-                            <b-dropdown id="dropdown-1" text="Dropdown">
-                              <b-dropdown-item @click="deleteSelected(person)">Delete</b-dropdown-item>
-                              <b-dropdown-item @click="editItem2Click(person)">Edit</b-dropdown-item>
-                                
-                            </b-dropdown>
+                          
+                            <!--<a class="text-success mr-2" @click="editItem2Click(person)" style="cursor:pointer;"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>-->
+
+                            <a class="text-danger mr-2" @click="addChatRow(index)" style="cursor:pointer;"><i class="nav-icon i-Speach-Bubble-3 font-weight-bold"></i></a>
+
+                           <!-- <a class="text-danger mr-2" @click="deleteSelected(person)" style="cursor:pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></a>-->
+                            
                         </td>
     
                         <!-- Add more columns as needed -->
@@ -57,8 +61,7 @@
             <b-modal v-model="addRowModal" title="Add Row">
                 <!-- Form for adding a new row -->
                 <form @submit.prevent="addTableRow2">
-                    <!-- Add input fields for the new row here -->
-                    <!-- Example: -->
+                    <!--
                     <div class="form-group">
                         <label for="newRecipient">Recipient:</label>
                         <input type="text" class="form-control" v-model="newRow.recipent">
@@ -72,8 +75,8 @@
                         <input type="text" class="form-control" v-model="newRow.status">
                     </div>
                     
-                    <!-- Add more fields as needed -->
                     <button type="submit" class="btn btn-primary">Add</button>
+                    -->
                 </form>
             </b-modal>
     
@@ -81,13 +84,7 @@
             <b-modal v-model="editRowModal" title="Edit Row">
                 <!-- Form for editing the selected row -->
                 <form @submit.prevent="saveEditedRow2">
-                <!-- Populate input fields with data from selectedRow -->
-                <!-- Example: -->
                 <!--
-                <div class="form-group">
-                    <label for="editRecipient">Recipient:</label>
-                    <input type="text" class="form-control" v-model="selectedRow.recipent">
-                </div>-->
                 <div class="form-group">
                     <label for="editMerchant">Merchant:</label>
                     <input type="text" class="form-control" v-model="selectedRow.Merchant">
@@ -101,7 +98,7 @@
                         <option value="Delivered">Delivered</option>
                         <option value="Processing">Processing</option>
                         
-                        <!-- ... options for other days ... -->
+                       
                     </select>
                 </div>
                 <div class="form-group">
@@ -112,9 +109,14 @@
                     <label for="editItems2">Items2:</label>
                     <input type="text" class="form-control" v-model="selectedRow.items2">
                 </div>
-                <!-- Add more fields as needed -->
+               
                 <button type="submit" class="btn btn-primary">Save</button>
+                -->
                 </form>
+            </b-modal>
+            <!--Adding Chart Modal -->
+            <b-modal v-model="showJohnChat" size="lg">
+                <JohnChat/>
             </b-modal>
         </div>
     </div>
@@ -124,14 +126,21 @@
 
 
 <script>
+import JohnChat from "../OrderChat/John.vue";
 export default{
+    
     name: 'orderT2',
+    components: {
+        JohnChat,
+    },
     data(){
         return{
             // New data properties for modals and editing
             addRowModal: false,
             editRowModal: false,
             selectedRow: {},
+            showJohnChat: false, //Control chart modal visibility
+
             newRow: {
                 // Initialize with default values for the new row fields
                 recipent: '',
@@ -150,11 +159,11 @@ export default{
             
             
             people2: [
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: '11/28/2017', status: 'Processing',  items1:'UI Lib', items2:'Angular 2.Vue.js'},
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image2.jpg"), Merchant: '11/28/2017', status: 'Processing',  items1:'UI Lib', items2:'Angular 2.Vue.js'  },
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image3.jpg"), Merchant: '11/28/2017', status: 'Processing',   items1:'UI Lib', items2:'Angular 2.Vue.js' },
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: '11/28/2017', status: 'Processing',  items1:'UI Lib', items2:'Angular 2.Vue.js'},
-                { selected: false, recipent: require("@/assets/images/products/foodkart-image2.jpg"), Merchant: '11/28/2017', status: 'Processing', items1:'UI Lib', items2:'Angular 2.Vue.js' }
+                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: "John Smoker", items: 'Food', status: 'Processing', fees:'5000'},
+                { selected: false, recipent: require("@/assets/images/products/foodkart-image2.jpg"), Merchant: "John Smoker", items: 'Food', status: 'Processing', fees:'3000'  },
+                { selected: false, recipent: require("@/assets/images/products/foodkart-image3.jpg"), Merchant: "John Smoker", items: 'Food', status: 'Processing', fees:'5000' },
+                { selected: false, recipent: require("@/assets/images/products/foodkart-image.jpg"), Merchant: "John Smoker", items: 'Food', status: 'Processing', fees:'4000'},
+                { selected: false, recipent: require("@/assets/images/products/foodkart-image2.jpg"), Merchant: "John Smoker", items: 'Food', status: 'Processing', fees:'5000' }
                 
             ]
            
@@ -269,6 +278,10 @@ export default{
         
         
         },
+        addChatRow(){
+      
+            this.showJohnChat = true;
+        }
 
 
 

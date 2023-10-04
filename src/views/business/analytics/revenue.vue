@@ -16,9 +16,7 @@
                 active-nav-item-class="nav nav-tabs"
                 content-class="mt-3"
                 >
-                    <b-tab title="All Transactions" active>
-                        <allTranscation/>
-                    </b-tab>
+                    
                     <b-tab title="Approved">
                         <Approved/>
                     </b-tab>
@@ -27,6 +25,9 @@
                     </b-tab>
                     <b-tab title="Pending">
                         <Pending/>
+                    </b-tab>
+                    <b-tab title="All Transactions" active>
+                      <allTranscation/>
                     </b-tab>
                     
                 </b-tabs>         
@@ -38,18 +39,20 @@
   <script>
   //import VueCropper from "vue-cropperjs";
   import "cropperjs/dist/cropper.css";
-  import allTranscation from './revenueTable/allTran.vue';
+  
   import Approved from './revenueTable/approved.vue';
   import Pending from './revenueTable/pending.vue';
   import Canceled from './revenueTable/canceled.vue';
+  import allTranscation from './revenueTable/allTran.vue';
   
   export default {
     components: {
       //VueCropper
-      allTranscation,
+      
       Approved,
       Pending,
       Canceled,
+      allTranscation,
     },
     metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used

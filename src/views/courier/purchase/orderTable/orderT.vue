@@ -12,8 +12,10 @@
           
           <!-- Pagination Controls -->
           <div class="pagination m-5">
-              <button @click="prevPage" class="btn btn-secondary">Previous Page</button>
-              <button @click="nextPage" class="btn btn-secondary ml-3">Next Page</button>
+              
+              <b-button pill variant="success m-1" @click="prevPage">Previous Page</b-button>
+              <b-button pill variant="success m-1" @click="nextPage">Next Page</b-button>
+              
           </div>
 
               
