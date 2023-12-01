@@ -20,7 +20,7 @@
                                       <th scope="col">#</th>
                                       <th scope="col">Reference</th>
                                       <th scope="col">Customer</th>
-                                      <th scope="col">Ordersd</th>
+                                      <th scope="col">Orders Id</th>
                                       <th scope="col">Amount</th>
                                       <th scope="col">Date</th>
                                       <th scope="col">Status</th>
