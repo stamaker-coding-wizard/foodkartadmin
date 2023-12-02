@@ -5,9 +5,12 @@
     <div class="row">
       <div class="col-md-12 mb-3">
         <div class="card text-left">
-          <div style="display: flex; justify-content:space-between; background-color:#fff;" class="p-3 rounded text-center">
+          <div style="display: flex; justify-content:space-between;align-items:center; background-color:#fff;" class="p-3 rounded text-center">
             <h4 class="card-title mb-3">Opening Days/Time </h4>
-            <b-button size="lg" variant="white" @click="addtable()">ADD</b-button>
+            
+            <b-button variant="primary ripple btn-icon m-1" @click="addtable()" style="border-radius:25px">
+              <span class="ul-btn__text ml-1">ADD</span>
+            </b-button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -16,8 +19,8 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Days</th>
-                        <th scope="col">Opening Date</th>
-                        <th scope="col">Closing Date</th>
+                        <th scope="col">Opening Time</th>
+                        <th scope="col">Closing Time</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
@@ -34,12 +37,12 @@
                           </span>
                         </td>
                         <td>
-                          <b-dropdown text="Actions">
-                            <b-dropdown-item @click="deleteRow(index)">Delete</b-dropdown-item>
-                            <b-dropdown-item @click="editRow(index)">Edit</b-dropdown-item>
-                            
+                          
+                          
+                          
+                          <a class="text-success mr-2" @click="editRow(index)" style="cursor:pointer;"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
 
-                          </b-dropdown>
+                          <a class="text-danger mr-2" @click="deleteRow(index)" style="cursor:pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></a>
                         </td>
                   
                       </tr>
@@ -56,6 +59,7 @@
     <!-- Edit Table Row Modal -->
     <b-modal v-model="showEditModal" title="Edit Row">
       <form @submit.prevent="updateTableRow">
+        <!--
         <div class="form-group">
           <label for="editDay">Day</label>
           <select v-model="editRowData.name" class="form-control" id="editDay">
@@ -66,7 +70,7 @@
             <option value="Friday">Friday</option>
             <option value="Saturday">Saturday</option>
             <option value="Sunday">Sunday</option>
-            <!-- ... options for other days ... -->
+           
           </select>
         </div>
         <div class="form-group">
@@ -86,12 +90,14 @@
         </div>
         <b-button type="submit" variant="primary">Save Changes</b-button>
         <b-button variant="secondary" @click="showEditModal = false">Cancel</b-button>
+        -->
       </form>
     </b-modal>
 
     <!-- Add Table Row Modal -->
     <b-modal v-model="showAddModal" title="Add New Row">
       <form @submit.prevent="addTableRow">
+        <!--
         <div class="form-group">
           <label for="day">Day</label>
           <select v-model="newRow.name" class="form-control" id="day">
@@ -102,7 +108,7 @@
             <option value="Friday">Friday</option>
             <option value="Saturday">Saturday</option>
             <option value="Sunday">Sunday</option>
-            <!-- Add options for other days here -->
+            
           </select>
         </div>
         <div class="form-group">
@@ -122,6 +128,7 @@
         </div>
         <b-button type="submit" variant="primary">Add</b-button>
         <b-button variant="secondary" @click="showAddModal = false">Cancel</b-button>
+        -->
       </form>
     </b-modal>
 

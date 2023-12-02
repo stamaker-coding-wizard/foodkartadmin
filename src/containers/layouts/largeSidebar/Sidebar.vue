@@ -534,11 +534,12 @@
           :class="{ 'd-block': selectedParentMenu == 'extrakits' }"
         >
           <li class="nav-item">
-            <router-link tag="a" class to="/business/analytics/business">
+            <router-link tag="a" class to="/business/analytics/Order">
               <i class="nav-icon i-Arrow-Down"></i>
-              <span class="item-name">Business Analytics</span>
+              <span class="item-name">Order</span>
             </router-link>
           </li>
+          
           <li class="nav-item">
             <router-link tag="a" class to="/business/analytics/revenue">
               <i class="nav-icon i-Crop-2"></i>
@@ -670,10 +671,11 @@
           <li class="nav-item">
             <router-link tag="a" class to="/vendors/category/list">
               <i class="nav-icon i-Bell1"></i>
-              <!--<span class="item-name">Alerts</span>-->
+              
               <span class="item-name">Product Groups</span>
             </router-link>
           </li>
+          
           <!-- <li
             @click.prevent="toggleSidebarDropdwon($event)"
             class="nav-item dropdown-sidemenu"
@@ -703,13 +705,15 @@
               <span class="item-name">Store Items</span>
             </router-link>
           </li>-->
+          
           <li class="nav-item">
             <router-link tag="a" class to="/vendors/category/items">
               <i class="nav-icon i-Split-Horizontal-2-Window"></i>
-              <!--<span class="item-name">Accordion</span>-->
+            
               <span class="item-name">Store Items</span>
             </router-link>
           </li>
+          
           <li class="nav-item">
             <router-link tag="a" class to="/vendors/category/business">
               <i class="nav-icon i-Medal-2"></i>

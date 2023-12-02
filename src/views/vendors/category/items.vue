@@ -64,27 +64,25 @@
                   >
                       
                       <b-tab title="Food" active>
+                        <!--
                           <div class="col-md-12 mb-3">        
                               <div class="table-responsive">
                                   <table class="table">
                                       <tbody>
-                                          <tr>
+                                          <tr v-for="(food, index) in foods" :key="food.id">
+                                              <th scope="row">{{ index + 1 }}</th>
                                               <td class="d-md-flex">
-                                                  <div class="flex-column" style="margin-right: 1rem;">
-                                                    <!-- Content for the first column -->
-                                                    <img src="@/assets/images/mac_book.jpg" alt="Hello" style="width:150px;hight:150px;">
-                                                  </div>
-                                                  <div class="flex-column">
-                                                    <!-- Content for the second column -->
-                                                    <h4>Great Logo Design</h4>
-                                                    <p class="text-success">UI lib admin themes</p>
-                                                    <div class="d-flex">
-                                                      
-                                                      <p>Author: <span class="text-info">John snow</span></p>
-                                                      <p class="ml-3">Released:<span class="text-info">22.08.17</span></p>
-                                                      
-                                                    </div>
-                                                  </div>
+                                                <div class="flex-column" style="margin-right: 1rem;">
+                                                 
+                                                  
+                                                  <img :src="food.Url" style="width:120px;hight:120px; border-radius:50%;">
+                                                </div>
+                                                <div class="flex-column">
+                                                  
+                                                  <h4>{{ food.name }}</h4>
+                                                  <p><span class="text-info">Vendor:</span> <span class="text-success">{{ food.vendor}}</span></p>
+                                                  
+                                                </div>
                                               </td>
 
                                               <td class="text-right">
@@ -92,179 +90,31 @@
                                               </td>
                                               
                                               <td class="text-right">
-                                                  <h2>19,200</h2>
-                                                  <span>sales</span>
+                                                  <h2> {{ food.price }}</h2>
+                                                  <span>{{ food.status }}</span>
                                               </td>
                                               
-                                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                          </tr>
-                                          <tr>
-                                              <td class="d-md-flex">
-                                                  <div class="flex-column" style="margin-right: 1rem;">
-                                                    <!-- Content for the first column -->
-                                                    <img src="@/assets/images/mac_book.jpg" alt="Hello" style="width:150px;hight:150px;">
-                                                  </div>
-                                                  <div class="flex-column">
-                                                    <!-- Content for the second column -->
-                                                    <h4>Great Logo Design</h4>
-                                                    <p class="text-success">UI lib admin themes</p>
-                                                    <div class="d-flex">
-                                                      
-                                                      <p>Author: <span class="text-info">John snow</span></p>
-                                                      <p class="ml-3">Released:<span class="text-info">22.08.17</span></p>
-                                                      
-                                                    </div>
-                                                  </div>
+                                              <td>
+                          
+                                                <a class="text-success mr-2" @click="editRow(index)" style="cursor:pointer;"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                      
+                                                <a class="text-danger mr-2" @click="deleteRow(index)" style="cursor:pointer;"><i class="nav-icon i-Close-Window font-weight-bold"></i></a>
                                               </td>
+                                          </tr>
 
-                                              <td class="text-right">
-                                                  
-                                              </td>
-                                              
-                                              <td class="text-right">
-                                                  <h2>29,200</h2>
-                                                  <span>sales</span>
-                                              </td>
-                                              
-                                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                          </tr>
-                                          <tr>
-                                              <td class="d-md-flex">
-                                                  <div class="flex-column" style="margin-right: 1rem;">
-                                                    <!-- Content for the first column -->
-                                                    <img src="@/assets/images/mac_book.jpg" alt="Hello" style="width:150px;hight:150px;">
-                                                  </div>
-                                                  <div class="flex-column">
-                                                    <!-- Content for the second column -->
-                                                    <h4>Great Logo Design</h4>
-                                                    <p class="text-success">UI lib admin themes</p>
-                                                    <div class="d-flex">
-                                                      
-                                                      <p>Author: <span class="text-info">John snow</span></p>
-                                                      <p class="ml-3">Released:<span class="text-info">22.08.17</span></p>
-                                                      
-                                                    </div>
-                                                  </div>
-                                              </td>
-
-                                              <td class="text-right">
-                                                  <h2>23,200</h2>
-                                                  <span>Quality</span>
-                                              </td>
-                                              
-                                              <td class="text-right">
-                                                  <h2>23,200</h2>
-                                                  <span>sales</span>
-                                              </td>
-                                              
-                                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                          </tr>
+                                          
                                       </tbody>
                                   </table>
                               </div>      
-                          </div>
-                      </b-tab>
+                          </div>-->
+                          <Foods/>
+                        </b-tab>
                       <b-tab title="Groceries">
-                          <div class="col-md-12 mb-3">        
-                              <div class="table-responsive">
-                                  <table class="table">
-                                      <tbody>
-                                          <tr>
-                                              <td class="d-md-flex">
-                                                  <div class="flex-column" style="margin-right: 1rem;">
-                                                    <!-- Content for the first column -->
-                                                    <img src="@/assets/images/mac_book.jpg" alt="Hello" style="width:150px;hight:150px;">
-                                                  </div>
-                                                  <div class="flex-column">
-                                                    <!-- Content for the second column -->
-                                                    <h4>Great Logo Design</h4>
-                                                    <p class="text-success">UI lib admin themes</p>
-                                                    <div class="d-flex">
-                                                      
-                                                      <p>Author: <span class="text-info">John snow</span></p>
-                                                      <p class="ml-3">Released:<span class="text-info">22.08.17</span></p>
-                                                      
-                                                    </div>
-                                                  </div>
-                                              </td>
-
-                                              <td class="text-right">
-                                                  
-                                              </td>
-                                              
-                                              <td class="text-right">
-                                                  <h2>19,200</h2>
-                                                  <span>sales</span>
-                                              </td>
-                                              
-                                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                          </tr>
-                                          <tr>
-                                              <td class="d-md-flex">
-                                                  <div class="flex-column" style="margin-right: 1rem;">
-                                                    <!-- Content for the first column -->
-                                                    <img src="@/assets/images/mac_book.jpg" alt="Hello" style="width:150px;hight:150px;">
-                                                  </div>
-                                                  <div class="flex-column">
-                                                    <!-- Content for the second column -->
-                                                    <h4>Great Logo Design</h4>
-                                                    <p class="text-success">UI lib admin themes</p>
-                                                    <div class="d-flex">
-                                                      
-                                                      <p>Author: <span class="text-info">John snow</span></p>
-                                                      <p class="ml-3">Released:<span class="text-info">22.08.17</span></p>
-                                                      
-                                                    </div>
-                                                  </div>
-                                              </td>
-
-                                              <td class="text-right">
-                                                  
-                                              </td>
-                                              
-                                              <td class="text-right">
-                                                  <h2>29,200</h2>
-                                                  <span>sales</span>
-                                              </td>
-                                              
-                                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                          </tr>
-                                          <tr>
-                                              <td class="d-md-flex">
-                                                  <div class="flex-column" style="margin-right: 1rem;">
-                                                    <!-- Content for the first column -->
-                                                    <img src="@/assets/images/mac_book.jpg" alt="Hello" style="width:150px;hight:150px;">
-                                                  </div>
-                                                  <div class="flex-column">
-                                                    <!-- Content for the second column -->
-                                                    <h4>Great Logo Design</h4>
-                                                    <p class="text-success">UI lib admin themes</p>
-                                                    <div class="d-flex">
-                                                      
-                                                      <p>Author: <span class="text-info">John snow</span></p>
-                                                      <p class="ml-3">Released:<span class="text-info">22.08.17</span></p>
-                                                      
-                                                    </div>
-                                                  </div>
-                                              </td>
-
-                                              <td class="text-right">
-                                                  <h2>23,200</h2>
-                                                  <span>Quality</span>
-                                              </td>
-                                              
-                                              <td class="text-right">
-                                                  <h2>23,200</h2>
-                                                  <span>sales</span>
-                                              </td>
-                                              
-                                              <td><a class="text-success mr-2" href="#"><i class="nav-icon i-Pen-2 font-weight-bold"></i></a><a class="text-danger mr-2" href="#"><i class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
-                                          </tr>
-                                      </tbody>
-                                  </table>
-                              </div>      
-                          </div>
+                          <groceries/>
                       </b-tab>
+                      <b-tab title="Drinks">
+                        <Drinks/>
+                    </b-tab>
                       
                   </b-tabs>         
               </b-card>      
@@ -273,31 +123,62 @@
           
           
       </div>
+
+      
+
   </div>
 </template>
 
 <script>
+import Foods from "./Component/ItemsOrder/Food.vue";
+import groceries from "./Component/ItemsOrder/groceries.vue";
+import Drinks from "./Component/ItemsOrder/Drinks.vue";
+
 export default {
-     metaInfo: {
-  // if no subcomponents specify a metaInfo.title, this title will be used
-title: "items"
-},
-  data() {
-    return {
-      text: `
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-        tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-        wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-        vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-        synth nesciunt you probably haven't heard of them accusamus labore VHS.
-      `
-    }
-  }
-}
+
+  components: {
+    // Register Bootstrap-Vue components
+    
+    Foods,
+    groceries,
+    Drinks,
+    
+  },
+  
+  
+  
+};
 </script>
 <style scoped>
- 
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.selected-option {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-options div {
+  padding: 10px;
+}
+
+.dropdown-options div:hover {
+  background-color: #f2f2f2;
+}
+
 </style>

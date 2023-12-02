@@ -165,11 +165,13 @@ const routes = [
             name: "list",
             component: () => import("./views/vendors/category/list"),
           },
+         
           {
             path: "items",
             name: "items",
             component: () => import("./views/vendors/category/items"),
           },
+          
           {
             path: "business",
             name: "business",
@@ -182,13 +184,14 @@ const routes = [
       {
         path: "/business/analytics",
         component: () => import("./views/business/analytics"),
-        redirect: "/business/analytics/business",
+        redirect: "/business/analytics/Order",
         children: [
           {
-            path: "business",
-            name: "business",
-            component: () => import("./views/business/analytics/business"),
+            path: "Order",
+            name: "Order",
+            component: () => import("./views/business/analytics/Order"),
           },
+          
           {
             path: "revenue",
             name: "revenue",
